@@ -17,4 +17,4 @@ channels:
     - conda-forge
     - defaults
   targets:
-    - ["valmar", "ndarray-psana"]
+    - ["valmar", "main"]
