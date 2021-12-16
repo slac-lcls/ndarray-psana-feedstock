@@ -8,10 +8,12 @@ package:
 source:
   git_url: https://github.com/lcls-psana/ndarray.git
   git_rev: V01-01-08
+  patches:
+    - iostream.patch
 
 build:
   skip: True  # [win or osx]
-  number: 22
+  number: 23
 
 requirements:
   build:
