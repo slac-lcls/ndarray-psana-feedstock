@@ -1,5 +1,5 @@
 {% set name = 'ndarray-psana' %}
-{% set version = '1.1.8' %}
+{% set version = '1.1.11' %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   git_url: https://github.com/lcls-psana/ndarray.git
-  git_rev: V01-01-08
+  git_rev: V01-01-11
   patches:
     - iostream.patch
 
 build:
   skip: True  # [win or osx]
-  number: 23
+  number: 25
 
 requirements:
   build:
@@ -23,15 +23,15 @@ requirements:
   run:
     - {{ pin_compatible('boost') }}
 
-test:
-  requires:
-    - {{ compiler('cxx') }}
-    - boost
-  source_files:
-    - test/ndarray-test.cpp
-  commands:
-    - ${CXX} ${CPPFLAGS} -o ndarray-test test/ndarray-test.cpp
-    - ./ndarray-test
+#test:
+#  requires:
+#    - {{ compiler('cxx') }}
+#    - boost
+#  source_files:
+#    - test/ndarray-test.cpp
+#  commands:
+#    - ${CXX} ${CPPFLAGS} -o ndarray-test test/ndarray-test.cpp
+#    - ./ndarray-test
 
 about:
   home: https://github.com/lcls-psana/ndarray
